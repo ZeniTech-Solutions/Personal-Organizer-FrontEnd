@@ -13,17 +13,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      siteURL: process.env.HOST,
       // firebase config
-      firebaseConfig: JSON.stringify({
-        apiKey: "AIzaSyDigESNvrP-cS8C-XT-fBmdPaq8OyZD3bo",
-        authDomain: "zenitech-5eb1b.firebaseapp.com",
-        projectId: "zenitech-5eb1b",
-        storageBucket: "zenitech-5eb1b.firebasestorage.app",
-        messagingSenderId: "738154290576",
-        appId: "1:738154290576:web:822799a362b65841a0e715",
-        measurementId: "G-60WB65F0NP"
-      })
+      firebaseConfig: JSON.parse(process.env.NUXT_PUBLIC_FIREBASE_CONFIG || '{}'),
     }
   },
   devServer: {

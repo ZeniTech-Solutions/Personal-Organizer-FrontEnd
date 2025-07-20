@@ -3,7 +3,7 @@ import firebase from "firebase/compat/app";
 
 export default defineNuxtPlugin(async (nuxtApp) => {
 
-  const firebaseConfig = JSON.parse(useRuntimeConfig().public.firebaseConfig);
+  const firebaseConfig = useRuntimeConfig().public.firebaseConfig;
 
   // Establishing web(FrontEnd) connection to Firebase(BackEnd)
   const app = firebase.initializeApp(firebaseConfig);
